@@ -1,0 +1,63 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue component</title>
+        <style>
+            .example {
+                width: 100%;
+                height: 100px;
+                background-color: #000;
+            }
+            .active {
+                background-color: yellow;
+            }
+
+            .text-danger {
+                background-color: red;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="example" class="example" v-bind:class="classObject"></div>
+        <div id="example2" class="example" v-bind:class="[activeClass, errorClass]"></div>
+
+        <div id="example3" class="example" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">
+                Style
+        </div>
+	</body>
+	<script src="https://unpkg.com/vue"></script>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+              isActive: true,
+              error: null
+            },
+            computed: {
+              classObject: function () {
+                return {
+                  active: this.isActive && !this.error,
+                  'text-danger': this.error && this.error.type === 'fatal'
+                }
+              }
+            }
+        })
+
+        var vm2 = new Vue({
+            el: '#example2',
+            data: {
+              activeClass: 'active',
+              errorClass: 'text-danger'
+            }
+        })
+
+        var vm3 = new Vue({
+            el: "#example3",
+            data: {
+              activeColor: 'red',
+              fontSize: 30
+            }
+        })
+    </script>
+</html>
