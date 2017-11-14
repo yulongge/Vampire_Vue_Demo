@@ -6,8 +6,10 @@
 	</head>
 	<body>
         <div id="app">
-          <button v-on:click="counter += 1">增加 1</button>
-          <p>这个按钮被点击了 {{ counter }} 次。</p>
+			<template>
+			  <button v-on:click="counter += 1">增加 1</button>
+			  <p>这个按钮被点击了 {{ counter }} 次。</p>
+		  	</template>
         </div>
         <div id="app2">
            <!-- `greet` 是在下面定义的方法名 -->

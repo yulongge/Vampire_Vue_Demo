@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h1>{{ name }}</h1>
+	<h2>{{ msg }}</h2>
     
   </div>
 </template>
@@ -11,6 +11,7 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
+	  name: 'Hello World !',
       msg: 'Welcome to Your Vue.js App',
     };
   },

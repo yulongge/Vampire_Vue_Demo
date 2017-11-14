@@ -3,18 +3,27 @@
 	<head>
 		<meta charset="utf-8">
 		<title>vue component</title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
 	</head>
 	<body>
         <div id="app">
+					<template>
+
           <ol>
             <li v-for="site in sites">
               {{ site.name }}
             </li>
           </ol>
+				</template>
+
         </div>
 
         <div id="app2">
-          <ul>
+          <ul v-cloak>
             <li v-for="value in object">
             {{ value }}
             </li>
@@ -32,7 +41,7 @@
 	</body>
 	<script src="https://unpkg.com/vue"></script>
     <script>
-    new Vue({
+    var vm1 = new Vue({
         el: '#app',
         data: {
             sites: [
